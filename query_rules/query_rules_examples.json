@@ -1,0 +1,60 @@
+{
+  "rule_set_id": "catalog_rules_v1",
+  "rules": [
+    {
+      "rule_id": "pin_sony_for_wireless_headphones",
+      "condition": {
+        "query_contains_any": [
+          "wireless",
+          "headphones"
+        ],
+        "category": "audio"
+      },
+      "action": {
+        "pin_sku": "SKU-1001"
+      }
+    },
+    {
+      "rule_id": "pin_garmin_for_running",
+      "condition": {
+        "query_contains_any": [
+          "running",
+          "runner",
+          "training"
+        ],
+        "category": "wearables"
+      },
+      "action": {
+        "pin_sku": "SKU-1006"
+      }
+    },
+    {
+      "rule_id": "boost_office_keyboard",
+      "condition": {
+        "query_contains_any": [
+          "office",
+          "productivity"
+        ],
+        "category": "computer_accessories"
+      },
+      "action": {
+        "boost_collection": "office",
+        "boost_value": 0.22
+      }
+    },
+    {
+      "rule_id": "boost_promoted_audio",
+      "condition": {
+        "query_contains_any": [
+          "headphones",
+          "audio"
+        ],
+        "category": "audio"
+      },
+      "action": {
+        "boost_promoted": true,
+        "boost_value": 0.1
+      }
+    }
+  ]
+}

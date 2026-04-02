@@ -1,0 +1,14 @@
+{
+  "dataset_source": "catalog_query_rules_sample",
+  "product_count": 8,
+  "scenario_count": 4,
+  "baseline_hit_rate_at_1": 0.75,
+  "rules_hit_rate_at_1": 1.0,
+  "improvement": 0.25,
+  "baseline_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/data/processed/baseline_results.csv",
+  "rules_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/data/processed/rules_results.csv",
+  "report_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/data/processed/query_rules_lab_report.json",
+  "rules_definition_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/query_rules/query_rules_examples.json",
+  "settings_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/index_configs/products_index_settings.json",
+  "mappings_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/index_configs/products_index_mappings.json"
+}
