@@ -4,28 +4,6 @@
 
 `catalog-search-query-rules-lab` é um laboratório de busca de catálogo com foco em **query rules** no contexto de `Elasticsearch`. O projeto foi pensado para mostrar como regras explícitas e auditáveis podem complementar um ranking lexical, principalmente em cenários de merchandising, campanhas e priorização controlada.
 
-### Storytelling técnico
-
-Sistemas de busca de catálogo normalmente começam com uma camada lexical forte. Isso resolve boa parte das consultas, mas não resolve tudo. Em ambientes reais, sempre aparecem situações em que o produto precisa intervir no ranking:
-
-- uma campanha quer fixar um SKU no topo;
-- uma coleção precisa ganhar destaque para certo contexto de busca;
-- um conjunto de produtos promocionados precisa subir em queries específicas;
-- uma decisão comercial precisa ser aplicada com clareza, sem depender de re-treinar modelos.
-
-Esse é o espaço natural das `query rules`. Elas não substituem o mecanismo de busca, mas acrescentam uma camada de **controle explícito**, útil quando a decisão precisa ser:
-
-- previsível;
-- governável;
-- fácil de explicar;
-- simples de desligar ou ajustar.
-
-O laboratório mostra exatamente essa arquitetura:
-
-- baseline lexical sem regras;
-- aplicação de regras controladas;
-- comparação antes vs depois;
-- medição objetiva do ganho.
 
 ### O que o projeto faz
 
@@ -41,19 +19,19 @@ O pipeline:
 
 ### Arquitetura do repositório
 
-- [src/sample_data.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/src/sample_data.py)  
+- [src/sample_data.py](src/sample_data.py)  
   Gera o catálogo, os cenários, as regras e a configuração do índice.
-- [src/modeling.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/src/modeling.py)  
+- [src/modeling.py](src/modeling.py)  
   Executa o benchmark antes e depois das regras.
-- [main.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/main.py)  
+- [main.py](main.py)  
   Roda o pipeline ponta a ponta.
-- [tests/test_project.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/tests/test_project.py)  
+- [tests/test_project.py](tests/test_project.py)  
   Garante o contrato mínimo do experimento.
-- [query_rules_examples.json](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/query_rules/query_rules_examples.json)  
+- [query_rules_examples.json](query_rules/query_rules_examples.json)  
   Registra a estrutura das regras e suas ações.
-- [products_index_settings.json](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/index_configs/products_index_settings.json)  
+- [products_index_settings.json](index_configs/products_index_settings.json)  
   Define analyzer e normalizer do índice.
-- [products_index_mappings.json](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/index_configs/products_index_mappings.json)  
+- [products_index_mappings.json](index_configs/products_index_mappings.json)  
   Define a estrutura do documento de catálogo.
 
 ### Pipeline conceitual
@@ -73,7 +51,7 @@ flowchart LR
 
 Arquivo:
 
-- [products_index_settings.json](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/index_configs/products_index_settings.json)
+- [products_index_settings.json](index_configs/products_index_settings.json)
 
 O projeto define:
 
@@ -91,7 +69,7 @@ Função prática:
 
 Arquivo:
 
-- [products_index_mappings.json](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/index_configs/products_index_mappings.json)
+- [products_index_mappings.json](index_configs/products_index_mappings.json)
 
 Campos principais:
 
@@ -129,8 +107,8 @@ Essa separação é importante porque regras costumam operar justamente sobre ca
 
 Arquivos:
 
-- [catalog_products.csv](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/data/raw/catalog_products.csv)
-- [query_scenarios.csv](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/data/raw/query_scenarios.csv)
+- [catalog_products.csv](data/raw/catalog_products.csv)
+- [query_scenarios.csv](data/raw/query_scenarios.csv)
 
 ### Estrutura do catálogo
 
@@ -163,7 +141,7 @@ O papel desses cenários é permitir que o experimento responda uma pergunta sim
 
 Arquivo:
 
-- [query_rules_examples.json](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/query_rules/query_rules_examples.json)
+- [query_rules_examples.json](query_rules/query_rules_examples.json)
 
 ### Modelo da regra
 
@@ -322,10 +300,10 @@ Esse resultado é importante porque mostra exatamente o papel desse tipo de cama
 
 ## Artefatos gerados
 
-- [baseline_results.csv](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/data/processed/baseline_results.csv)
-- [rules_results.csv](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/data/processed/rules_results.csv)
-- [query_rules_lab_report.json](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/data/processed/query_rules_lab_report.json)
-- [query_rules_examples.json](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/catalog-search-query-rules-lab/query_rules/query_rules_examples.json)
+- [baseline_results.csv](data/processed/baseline_results.csv)
+- [rules_results.csv](data/processed/rules_results.csv)
+- [query_rules_lab_report.json](data/processed/query_rules_lab_report.json)
+- [query_rules_examples.json](query_rules/query_rules_examples.json)
 
 ### Como ler os artefatos
 
